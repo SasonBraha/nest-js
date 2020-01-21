@@ -45,6 +45,10 @@ export class TasksService {
     }
 
     deleteTask(id: string): void {
+        /*
+        * We execute getTaskById only to trigger validation.
+        * */
+        const found = this.getTaskById(id);
         this.tasks = this.tasks.filter(task => task.id !== id);
     }
 
